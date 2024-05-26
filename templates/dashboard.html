@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Adicionar links para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados */
+        .registro-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .registro-list {
+            margin-top: 10px;
+        }
+        .registro-list-item {
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .registro-list-item:last-child {
+            margin-bottom: 0; /* Remove a margem inferior do último item */
+        }
+        .registro-list-item:hover,
+        .registro-list-item:focus {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn btn-secondary back-button"><i class="fas fa-arrow-left"></i> Voltar</a>
+        <h1 class="mt-4">Dashboard</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div>{{ barras | safe }}</div>
+            </div>
+            <div class="col-md-6">
+                <div>{{ pizza | safe }}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div>{{ histogram | safe }}</div>
+            </div>
+            <div class="col-md-6">
+                <div>{{ linha | safe }}</div>
+            </div>
+        </div>
+        <!-- Lista de registros -->
+        <div class="registro-header">
+            <h2>Registros da cidade de São José do Rio Preto:</h2>
+        </div>
+        <div class="registro-list">
+            {% for registro in registros_sao_jose %}
+                <div class="registro-list-item" tabindex="0">{{ registro }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Adicionar scripts para o Bootstrap JS (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

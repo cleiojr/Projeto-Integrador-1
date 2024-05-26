@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Menu Lateral</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #343a39; /* Bootstrap's dark gray 343a39*/
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #f8f9fa; /* Bootstrap's light gray */
+            display: block;
+            transition: color 0.3s;
+        }
+        .sidebar a:hover {
+            color: #adb5bd; /* Bootstrap's gray */
+            background-color: #495057; /* Darker gray background on hover */
+        }
+        .content {
+            margin-left: 250px; /* Same as the sidebar's width */
+            padding: 20px;
+            /*background-color: rgba(233, 236, 239, 0.8); /* Light gray background for content with transparency */
+            min-height: 100vh;
+            background-image: url(static/imagens/LOGOFUNDOBRANCO.jpg);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size:  73% 100%;
+            text-shadow: 2px 2px 4px rgba(0, 0, 1, 0.1);
+
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body >
+    <div class="sidebar">
+        <a href="informacoes">Informações</a>
+        <a href="mapaIterativo">Mapa da Infecção</a>
+        <a href="registroContagios">Registrar Contágio</a>
+        <a href="dashboard">Dashboard</a>
+        <!--<a href="dashboard2">Gráficos2</a>-->
+        <a href="Listagem">Dados Cadastrados</a>
+    </div>
+    <div class="content">
+
+        <section id="informacoes">
+            <h3>Informações</h3>
+            <p>Detalhes sobre as informações relevantes.</p>
+        </section>
+        <section id="mapaIterativo">
+            <h3>Mapa da Infecção</h3>
+            <p>Visualização interativa das áreas afetadas através do mapa.</p>
+        </section>
+        <section id="registroContagios">
+            <h3>Registrar Contágio</h3>
+            <p>Se voce suspeita estar com dengue, preencha o formulário e </p>
+            <p>nos ajude a mapear o avanço epidemiológico!.</p>
+        </section>
+        <section id="dashboard">
+            <h3>Dashboard</h3>
+            <p>Gráficos dinâmicos mostrando informações sobre </p>
+            <p>a epidemia.</p>
+        </section>
+        <!--<section id="dashboard2">
+            <h3>Gráficos2</h3>
+            <p>Gráficos dinâmicos mostrando informações sobre a epidemia.</p>
+        </section>-->
+        <section id="Listagem">
+            <h3>Dados Cadastrados</h3>
+            <p>Listagem de Dados Cadastrados.</p>
+        </section>
+
+
+
+    </div>
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

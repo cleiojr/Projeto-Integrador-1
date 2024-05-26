@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Contágio de Dengue</title>
+
+    <!-- Inclusão do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Inclusão do jQuery Mask Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* very light gray background */
+            color: #495057; /* darker gray text for good readability */
+        }
+        .container {
+            padding-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control, .btn, .form-check-input {
+            background-color: #ffffff; /* white background for inputs */
+            border: 1px solid #ced4da;
+            color: #495057;
+            box-shadow: none; /* Remove Bootstrap's default box shadow */
+        }
+        .btn {
+            border-color: #6c757d; /* Darker border for button */
+        }
+        .header {
+            color: #343a40; /* Very dark gray for headings */
+        }
+        .back-button {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn btn-secondary back-button"><i class="fas fa-arrow-left"></i> Voltar</a>
+        <h1 class="header">Registro de Contágio de Dengue</h1>
+        <form method="POST" action="/enviar">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" class="form-control" id="Reg_Nome" name="Reg_Nome" placeholder="Digite seu nome completo">
+            </div>
+            <div class="form-group">
+                <label for="Nascimento">Data de Nascimento</label>
+                <input type="date" class="form-control" id="Reg_Nascimento" name="Reg_Nascimento">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="Reg_Email" name="Reg_Email" placeholder="Digite seu e-mail">
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" class="form-control" id="Reg_Telefone" name="Reg_Telefone" placeholder="(XX) XXXXX-XXXX">
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" class="form-control" id="Reg_endereco" name="Reg_endereco" placeholder="Rua e número">
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" class="form-control" id="Reg_Bairro" name="Reg_Bairro" placeholder="Digite seu bairro">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" class="form-control" id="Reg_Cidade" name="Reg_Cidade" placeholder="Digite sua cidade">
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select class="form-control" id="Reg_Estado" name="Reg_Estado">
+                    <option>Selecione seu estado</option>
+                    <option>AC</option>
+                    <option>AL</option>
+                    <option>AP</option>
+                    <option>AM</option>
+                    <option>BA</option>
+                    <option>CE</option>
+                    <option>DF</option>
+                    <option>ES</option>
+                    <option>GO</option>
+                    <option>MA</option>
+                    <option>MT</option>
+                    <option>MS</option>
+                    <option>MG</option>
+                    <option>PA</option>
+                    <option>PB</option>
+                    <option>PR</option>
+                    <option>PE</option>
+                    <option>PI</option>
+                    <option>RJ</option>
+                    <option>RN</option>
+                    <option>RS</option>
+                    <option>RO</option>
+                    <option>RR</option>
+                    <option>SC</option>
+                    <option>SP</option>
+                    <option>SE</option>
+                    <option>TO</option>
+
+                    <!-- Add other states as necessary -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" class="form-control" id="Reg_Cep" name="Reg_Cep" placeholder="Digite seu CEP">
+            </div>
+            <div class="form-group">
+                <label>Sintomas</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="febre Alta" id="febreAlta"  name="sintomas">
+                    <label class="form-check-label" for="febreAlta">
+                        Febre alta (acima de 39°C)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="dor Cabeca" id="dorCabeca"  name="sintomas">
+                    <label class="form-check-label" for="dorCabeca">
+                        Dor de cabeça
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="dor Olhos" id="dorOlhos"  name="sintomas">
+                    <label class="form-check-label" for="dorOlhos">
+                        Dor atrás dos olhos
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="fadiga" id="fadiga"  name="sintomas">
+                    <label class="form-check-label" for="fadiga">
+                        Fadiga
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="manchas" id="manchas"  name="sintomas">
+                    <label class="form-check-label" for="manchas">
+                        Manchas vermelhas na pele
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="dores Musculares" id="doresMusculares"  name="sintomas">
+                    <label class="form-check-label" for="doresMusculares">
+                        Dores musculares
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="dores Articulacoes" id="doresArticulacoes"  name="sintomas">
+                    <label class="form-check-label" for="doresArticulacoes">
+                        Dores nas articulações
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="nausea" id="nausea"  name="sintomas">
+                    <label class="form-check-label" for="nausea">
+                        Náusea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="vomito" id="vomito"  name="sintomas">
+                    <label class="form-check-label" for="vomito">
+                        Vômito
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="perda Apetite" id="perdaApetite"  name="sintomas">
+                    <label class="form-check-label" for="perdaApetite">
+                        Perda de apetite
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="diarreia" id="diarreia"  name="sintomas">
+                    <label class="form-check-label" for="diarreia">
+                        Diarreia
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="mal EstarGeral" id="malEstarGeral"  name="sintomas">
+                    <label class="form-check-label" for="malEstarGeral">
+                        Mal-estar geral
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="dor Garganta" id="dorGarganta"  name="sintomas">
+                    <label class="form-check-label" for="dorGarganta">
+                        Dor de garganta
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ehDengue">Resultado positivo para Dengue</label>
+                <select class="form-control" id="Reg_EhDengue" name="Reg_EhDengue">
+                    <option>Sim</option>
+                    <option>Nao</option>
+                    <option>Indeterminado</option>
+                </select>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-secondary"  value="enviar">Registrar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#telefoneCelular').mask('(00) 00000-0000');
+        });
+    </script>
+</body>
+</html>

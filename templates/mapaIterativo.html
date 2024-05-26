@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* very light gray background */
+            color: #495057; /* darker gray text for good readability */
+        }
+        .container {
+            padding-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control, .btn, .form-check-input {
+            background-color: #ffffff; /* white background for inputs */
+            border: 1px solid #ced4da;
+            color: #495057;
+            box-shadow: none; /* Remove Bootstrap's default box shadow */
+        }
+        .btn {
+            border-color: #6c757d; /* Darker border for button */
+        }
+        .header {
+            color: #343a40; /* Very dark gray for headings */
+        }
+        .back-button {
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Mapa de Marcações com Círculos</title>
+</head>
+<body>
+    <a href="/" class="btn btn-secondary back-button"><i class="fas fa-arrow-left"></i> Voltar</a>
+    <h1>Mapa de contágio por localidade</h1>
+    <!-- Exibir o mapa -->
+    {{ map_circulos | safe }}
+</body>
+</html>

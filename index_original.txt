@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Menu Lateral</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('C:\Users\Cleio\Documents\Univesp\Projeto Integrador 1\Projeto1\static\imagens\LOGO FUNDO BRANCO.jpg'); /* Adicionando imagem de fundo */
+            background-size: cover; /* Garante que a imagem cubra toda a página */
+            background-position: center; /* Centraliza a imagem na página */
+        }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #343a40; /* Bootstrap's dark gray */
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #f8f9fa; /* Bootstrap's light gray */
+            display: block;
+            transition: color 0.3s;
+        }
+        .sidebar a:hover {
+            color: #adb5bd; /* Bootstrap's gray */
+            background-color: #495057; /* Darker gray background on hover */
+        }
+        .content {
+            margin-left: 250px; /* Same as the sidebar's width */
+            padding: 20px;
+            background-color: #e9ecef; /* Light gray background for content */
+            min-height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="informacoes">Informações</a>
+        <a href="mapaIterativo">Areas afetadas</a>
+        <a href="registroContagios">Registros</a>
+        <a href="dashboard">Gráficos</a>
+        <a href="dashboard2">Gráficos2</a>
+        <a href="Listagem">Dados Cadastrados</a>
+    </div>
+    <div class="content">
+
+        <section id="informacoes">
+            <h3>Informações</h3>
+            <p>Detalhes sobre as informações relevantes.</p>
+        </section>
+        <section id="mapaIterativo">
+            <h3>Areas afetadas</h3>
+            <p>Visualização interativa das areas afetadas através do mapa.</p>
+        </section>
+        <section id="registroContagios">
+            <h3>Registros</h3>
+            <p>Registro de contágio.</p>
+        </section>
+        <section id="dashboard">
+            <h3>Gráficos</h3>
+            <p>Gráficos dinâmicos mostrando informações sobre a epidêmia.</p>
+        </section>
+        <section id="dashboard2">
+            <h3>Gráficos2</h3>
+            <p>Gráficos dinâmicos mostrando informações sobre a epidêmia.</p>
+        </section>
+        <section id="Listagem">
+            <h3>Dados Cadastrados</h3>
+            <p>Listagem de Dados Cadastrados.</p>
+        </section>
+    </div>
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
